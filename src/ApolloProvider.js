@@ -5,8 +5,11 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { createHttpLink } from "apollo-link-http";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { setContext } from "apollo-link-context";
+
 const httpLink = createHttpLink({
-  uri: "http://localhost:5000",
+  // locally this is out URI, the other one is running on heroku
+  // uri: "http://localhost:5000",
+  uri: "https://mysterious-brushlands-61576.herokuapp.com/",
 });
 
 const authLink = setContext(() => {
